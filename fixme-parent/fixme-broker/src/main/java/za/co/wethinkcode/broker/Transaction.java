@@ -25,8 +25,9 @@ public class Transaction {
 	@Pattern(regexp = "buy|sell|BUY|SELL", message = "Must be buy or sell.")
 	private String buyOrSell;
 	private String instrument;
-	@Pattern(regexp = "[0-9]+", message = "Must be a number")
+	@Pattern(regexp = "[0-9]{1,9}", message = "Must be a number, and not larger than 999'999'999")
 	private String orderQty;
+
 	
 	
 	private Transaction(String marketId, String buyOrSell, String instrument, String orderQty) {
